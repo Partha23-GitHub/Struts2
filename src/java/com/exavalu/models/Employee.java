@@ -5,7 +5,6 @@
 package com.exavalu.models;
 
 import com.exavalu.services.EmployeeService;
-import com.exavalu.services.LoginService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.io.Serializable;
