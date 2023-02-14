@@ -237,21 +237,6 @@ public class User extends ActionSupport implements ApplicationAware, SessionAwar
 
     }
     
-    public String apiCall() throws Exception {
-        String result = "SUCCESS";
-        JDBCUtility jdbcUtility = JDBCUtility.getInstanceOfJDBCUtility();
-        String url = jdbcUtility.getPropertyValue("apiUrl");
-        
-        HttpRequest request=HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
-        HttpClient client=HttpClient.newBuilder().build();
-        HttpResponse<String> response=client.send(request,HttpResponse.BodyHandlers.ofString());
-        System.out.println("\nSending 'GET' request to URL : " + url);
-        System.out.println("Response Code : " + response.statusCode());
-        System.out.println("Data:"+response.body());
-        
-         
-        return result;
-
-    }
+    
 
 }

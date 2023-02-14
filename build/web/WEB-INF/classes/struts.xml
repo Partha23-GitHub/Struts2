@@ -51,7 +51,7 @@
         </action> 
         
         
-        <action name="ApiFetch" class="com.exavalu.models.User" method="apiCall">
+        <action name="ApiFetch" class="com.exavalu.models.Api" method="apiCall">
             <result name="SUCCESS">employeeDetails.jsp</result>
             <result name="FAILURE">employeeDetails.jsp</result>
         </action>

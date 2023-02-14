@@ -12,10 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello click on the submit button to get all data</h1>
+        <h1>Hello click on the submit button to put data</h1>
         <form action="ApiFetch" method="Post" id="myForm">
+            <label for="floatingInput">URL</label>
+            <input type="text" name="url" class="form-control" id="floatingInput" style="width: 300px">
+            
             <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
         </form>
-       
+
     </body>
 </html>
