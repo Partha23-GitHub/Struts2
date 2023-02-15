@@ -165,6 +165,7 @@ public class User extends ActionSupport implements ApplicationAware, SessionAwar
             ArrayList roleList = RoleService.getInstance().getAllRole();
             ArrayList countries=CountryService.getInstance().getAllCountry();
             result = "SUCCESS";
+            
             sessionMap.put("Loggedin", this);
             sessionMap.put("EmpList", emp);
             sessionMap.put("DeptList", deptList);

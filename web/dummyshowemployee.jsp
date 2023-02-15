@@ -1,47 +1,6 @@
-<%-- 
-    Document   : landingPage
-    Created on : 22-Dec-2022, 12:00:33 PM
-    Author     : Avijit Chattopadhyay
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="com.exavalu.services.EmployeeService"%>
-
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!--        <link href="css/header.css" rel="stylesheet">-->
-        <link rel="stylesheet" href="css/all.min.css">
-        <link rel="stylesheet" href="css/reset-min.css">
-        <link rel="stylesheet" href="css/algolia-min.css">
-        <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/docs.min.css">
-        <link rel="stylesheet" href="css/index.css">
-        <title>Employee Management</title>
-    </head>
-    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-    <!<!-- I want to check my session before showing any content to the user -->
-
-
-    <body>
-
-        <jsp:include page="menu.jsp"></jsp:include>
-
-            <div id="example">
-                <script>
-                    init({
-                        title: 'Large data',
-                        desc: 'Use `virtualScroll` to enable the virtual scroll to play with large data sets (10000 rows).',
-                        links: ['bootstrap-table.min.css'],
-                        scripts: ['bootstrap-table.min.js']
-                    });
-                </script>
-
-
-
-                <div class="fixed-table-container fixed-height" style="height: 542px; padding-bottom: 50.5px;">
+                    <div class="fixed-table-container fixed-height" style="height: 542px; padding-bottom: 50.5px;">
 
                         <div class="fixed-table-body">
                             <table id="table" data-height="400" data-virtual-scroll="true" class="table table-bordered table-hover" style="margin-top: -9.5px;">
@@ -110,7 +69,7 @@
                                                 ${emp.getSalary()}                    </td>
                                             <td>
                                                 ${emp.getAllowance()}                    </td>
-                                            <td>Â 
+                                            <td> 
                                                 <a href="Edit?employeeId=${emp.getEmployeeId()}">Edit</a>
                                                 <a href="Delete?employeeId=${emp.getEmployeeId()}">Delete</a>
                                                 </td>                                
@@ -124,5 +83,3 @@
                     </div>
                     <div class="fixed-table-pagination" style="display: none;"></div>
                 </div>
-                </body>
-                </html>

@@ -36,18 +36,12 @@
                         desc: 'Use `virtualScroll` to enable the virtual scroll to play with large data sets (10000 rows).',
                         links: ['bootstrap-table.min.css'],
                         scripts: ['bootstrap-table.min.js']
-                    })
+                    });
                 </script>
 
 
 
-                <div class="bootstrap-table bootstrap5">
-                    <div class="fixed-table-toolbar"><div class="bs-bars float-left">
-
-                        </div><div class="columns columns-right btn-group float-right"><div class="keep-open btn-group" title="Columns">
-                                <div class="dropdown-menu dropdown-menu-right" style=""><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="id" value="0" checked="checked"> <span>ID</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="name" value="1" checked="checked"> <span>Item Name</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="price" value="2" checked="checked"> <span>Item Price</span></label></div></div></div></div>
-
-                    <div class="fixed-table-container fixed-height" style="height: 542px; padding-bottom: 50.5px;">
+                <div class="fixed-table-container fixed-height" style="height: 542px; padding-bottom: 50.5px;">
 
                         <div class="fixed-table-body">
                             <table id="table" data-height="400" data-virtual-scroll="true" class="table table-bordered table-hover" style="margin-top: -9.5px;">

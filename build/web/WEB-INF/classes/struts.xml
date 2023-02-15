@@ -6,7 +6,7 @@
     <!-- Configuration for the default package. -->
     <package name="default" namespace="/" extends="struts-default">
         <action name="Login" class="com.exavalu.models.User" method="doLogin">
-            <result name="SUCCESS">employeeDetails.jsp</result>
+            <result name="SUCCESS">dummyhome.jsp</result>
             <result name="FAILURE">login.jsp</result>
         </action> 
         <action name="Logout" class="com.exavalu.models.User" method="doLogout">
@@ -40,7 +40,13 @@
             <result name="FAILURE">employeeDetails.jsp</result>
         </action>
         
-        
+        <action name="navBarPage" class="com.exavalu.models.Employee" method="getNavBarWork">
+            <result name="SHOW">employeeDetails.jsp</result>
+            <result name="FAILURE">dummyhome.jsp</result>
+            <result name="SEARCH">search.jsp</result>
+            <result name="ADD">addEmployee.jsp</result>
+            <result name="API">api.jsp</result>
+        </action>
         
         <action name="PreSignUp" class="com.exavalu.models.User" method="doPreSignUp">
             <result name="STATELIST">statelist.jsp</result>

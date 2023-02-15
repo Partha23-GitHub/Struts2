@@ -42,6 +42,7 @@ public class Employee extends ActionSupport implements ApplicationAware, Session
     private SessionMap<String, Object> sessionMap = (SessionMap) ActionContext.getContext().getSession();
 
     private ApplicationMap map = (ApplicationMap) ActionContext.getContext().getApplication();
+    
 
     @Override
     public void setApplication(Map<String, Object> application) {
@@ -400,5 +401,35 @@ public class Employee extends ActionSupport implements ApplicationAware, Session
 
         return result;
     }
+      private String work;
+
+    public String getWork() {
+        return work;
+    }
+
+    public void setWork(String work) {
+        this.work = work;
+    }
+      public String getNavBarWork()throws Exception{
+          String result="FAILURE";
+        switch (this.work) {
+            case "show":
+                result="SHOW";
+                break;
+            case "search":
+                result="SEARCH";
+                break;
+            case "add":
+                result="ADD";
+                break;
+            case "api":
+                result="API";
+                break;
+            default:
+                break;
+        }
+          
+          return result;
+      }
     
 }

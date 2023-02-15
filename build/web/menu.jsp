@@ -11,7 +11,22 @@
         <link href="css/header.css" rel="stylesheet">
         <!--<link href="css/carousel.css" rel="stylesheet">-->
     </head>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function fetchContent(selected,target) {
+            //alert("HI");
+            $.ajax({
+                url:'navBarPage',
+                data:{
+                    ['work']:(selected)
+                },
+                success:function(responseText){
+                    $("#"+target).html(responseText);
+                }
+            });
+        }
 
+    </script>
     <header class="p-3 text-bg-dark">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -20,15 +35,15 @@
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="addEmployee.jsp" class="nav-link px-2 text-white">Add Employee</a></li>
-                    <li><a href="employeeDetails.jsp" class="nav-link px-2 text-white">Show Employee</a></li>
-                    <li><a href="search.jsp" class="nav-link px-2 text-white">Search Employee</a></li>
-                    <li><a href="api.jsp" class="nav-link px-2 text-white">Fetch API data</a></li>
+                    <li><a onclick="fetchContent('add','target')" class="nav-link px-2 text-white">Add Employee</a></li>
+                    <li id="showemployee"><a onclick="fetchContent('show','target')" class="nav-link px-2 text-white">Show Employee</a></li>
+                    <li><a onclick="fetchContent('search','target')" class="nav-link px-2 text-white">Search Employee</a></li>
+                    <li><a onclick="fetchContent('api','target')" class="nav-link px-2 text-white">Fetch API data</a></li>
                 </ul>
 
 
-                    <a class="nav-link px-2 text-white" href="#">
-                        Welcome: ${user.firstName} ${user.lastName}</a>
+                <a class="nav-link px-2 text-white" href="#">
+                    Welcome: ${user.firstName} ${user.lastName}</a>
 
 
                 <div class="text-end">
@@ -54,3 +69,8 @@
             </div>
         </div>
     </header>
+    <body>
+        <div id="target">
+
+        </div>
+    </body>

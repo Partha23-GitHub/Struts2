@@ -4,7 +4,7 @@
     Author     : anich
 --%>
 
-<%@page import="java.util.ArrayList"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -20,6 +20,7 @@
         <script src="https://kit.fontawesome.com/2bbac3a66c.js" crossorigin="anonymous" ></script>
     </head>
     <body>
+        <jsp:include page="menu.jsp"></jsp:include>
         <form  id="create-account-form" action="Add" method="POST">
 
             <div class="title">

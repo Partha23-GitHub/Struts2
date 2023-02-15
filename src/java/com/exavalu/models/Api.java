@@ -74,14 +74,14 @@ public class Api {
         HttpClient client = HttpClient.newBuilder().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         //System.out.println(response.body().length());
-        System.out.println("Data:" + response.body());
+        //System.out.println("Data:" + response.body());
         try {
             JSONArray jsonArray = new JSONArray(response.body());
             for (int i = 0; i < jsonArray.length(); i++) {
                 Api api = new Api();
                 JSONObject obj = jsonArray.getJSONObject(i);
                 api.setId(obj.getInt("id"));
-                System.out.println(api.getId());
+                //System.out.println(api.getId());
                 api.setUserId(obj.getInt("userId"));
                 api.setTitle(obj.getString("title"));
                 api.setCompleted(String.valueOf(obj.getBoolean("completed")));
@@ -95,10 +95,10 @@ public class Api {
             JSONObject jsonObject = new JSONObject(response.body());
             Api api = new Api();
             api.setId(jsonObject.getInt("id"));
-            System.out.println(api.getId());
+            //System.out.println(api.getId());
             api.setUserId(jsonObject.getInt("userId"));
             api.setTitle(jsonObject.getString("title"));
-            System.out.println(api.getTitle());
+            //System.out.println(api.getTitle());
             api.setCompleted(String.valueOf(jsonObject.getBoolean("completed")));
             api.setUrl(this.url);
             boolean response1 = ApiService.getInstance().postData(api);

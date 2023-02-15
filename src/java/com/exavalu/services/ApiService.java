@@ -44,11 +44,11 @@ public class ApiService {
             preparedStatement.setInt(2, api.getUserId());
             preparedStatement.setString(3, api.getTitle());
             preparedStatement.setString(4, api.isCompleted());
-            System.out.println(preparedStatement);
+            //System.out.println(preparedStatement);
             
             int row = preparedStatement.executeUpdate();
 
-            if (row == 1) {
+            if (row>0) {
                 result = true;
             }
 
