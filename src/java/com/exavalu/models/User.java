@@ -11,18 +11,14 @@ import com.exavalu.services.EmployeeService;
 import com.exavalu.services.LoginService;
 import com.exavalu.services.RoleService;
 import com.exavalu.services.StateService;
-import com.exavalu.utils.JDBCUtility;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+
 import java.io.Serializable;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+
 import java.util.ArrayList;
 import java.util.Map;
+import org.apache.log4j.Logger;
 import org.apache.struts2.dispatcher.ApplicationMap;
 import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.ApplicationAware;
@@ -171,6 +167,9 @@ public class User extends ActionSupport implements ApplicationAware, SessionAwar
             sessionMap.put("DeptList", deptList);
             sessionMap.put("RoleList", roleList);
             sessionMap.put("Countries", countries);
+        }else{
+            Logger log=Logger.getLogger(LoginService.class.getName());
+               log.error(this.getClass().getName() + "Username or password wrong");
         }
 
         return result;

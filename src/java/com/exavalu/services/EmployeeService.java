@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -55,7 +56,8 @@ public class EmployeeService {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            Logger log=Logger.getLogger(LoginService.class.getName());
+               log.error(this.getClass().getName()+" code: "+ ex.getErrorCode() +" message:"+ ex.getMessage());
         }
         System.err.println("Total rows:" + empList.size());
         return empList;
@@ -92,7 +94,8 @@ public class EmployeeService {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            Logger log=Logger.getLogger(LoginService.class.getName());
+               log.error(this.getClass().getName()+" code: "+ ex.getErrorCode() +" message:"+ ex.getMessage());
         }
         return result;
     }
@@ -122,7 +125,8 @@ public class EmployeeService {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            Logger log=Logger.getLogger(LoginService.class.getName());
+               log.error(this.getClass().getName()+" code: "+ ex.getErrorCode() +" message:"+ ex.getMessage());
         }
 
         return emp;
@@ -161,7 +165,8 @@ public class EmployeeService {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            Logger log=Logger.getLogger(LoginService.class.getName());
+               log.error(this.getClass().getName()+" code: "+ ex.getErrorCode() +" message:"+ ex.getMessage());
         }
         return empList;
 
@@ -195,7 +200,8 @@ public class EmployeeService {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            Logger log=Logger.getLogger(LoginService.class.getName());
+               log.error(this.getClass().getName()+" code: "+ ex.getErrorCode() +" message:"+ ex.getMessage());
         }
         return result;
     }
@@ -217,7 +223,8 @@ public class EmployeeService {
             }
 
         } catch (SQLException ex) {
-
+            Logger log=Logger.getLogger(LoginService.class.getName());
+               log.error(this.getClass().getName()+" code: "+ ex.getErrorCode() +" message:"+ ex.getMessage());
         }
         return result;
 

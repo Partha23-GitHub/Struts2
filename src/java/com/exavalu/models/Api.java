@@ -5,11 +5,13 @@
 package com.exavalu.models;
 
 import com.exavalu.services.ApiService;
+import com.exavalu.services.LoginService;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -106,7 +108,8 @@ public class Api {
                     result = "SUCCESS";
                 }
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger log=Logger.getLogger(LoginService.class.getName());
+            log.error(this.getClass().getName()+" message:"+ e.getMessage());
         }
         return result;
     }

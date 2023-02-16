@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import org.apache.log4j.Logger;
 
 public class StateService {
 
@@ -50,7 +51,8 @@ public class StateService {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            Logger log=Logger.getLogger(LoginService.class.getName());
+               log.error(this.getClass().getName()+" code: "+ ex.getErrorCode() +" message:"+ ex.getMessage());
         }
 
         return stateList;

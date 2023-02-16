@@ -5,11 +5,13 @@
 package com.exavalu.models;
 
 import com.exavalu.services.EmployeeService;
+import com.exavalu.services.LoginService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Map;
+import org.apache.log4j.Logger;
 import org.apache.struts2.dispatcher.ApplicationMap;
 import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.ApplicationAware;
@@ -332,7 +334,8 @@ public class Employee extends ActionSupport implements ApplicationAware, Session
 
             result = "SUCCESS";
         } else {
-            System.out.println("returning Failure from doLogin method");
+            Logger log=Logger.getLogger(LoginService.class.getName());
+               log.error(this.getClass().getName() +" message:Something wrong in doEdit()");
         }
 
         return result;
@@ -360,7 +363,8 @@ public class Employee extends ActionSupport implements ApplicationAware, Session
 
             result = "SUCCESS";
         } else {
-            System.out.println("returning Failure from editemployee method");
+            Logger log=Logger.getLogger(LoginService.class.getName());
+               log.error(this.getClass().getName() +" message:Something wrong in delete()");
         }
 
         return result;
@@ -375,7 +379,8 @@ public class Employee extends ActionSupport implements ApplicationAware, Session
 
             result = "SUCCESS";
         } else {
-            System.out.println("returning Failure from findemployee method");
+           Logger log=Logger.getLogger(LoginService.class.getName());
+               log.error(this.getClass().getName() +" message:Something wrong in findEmployee()");
         }
 
         return result;
@@ -395,8 +400,9 @@ public class Employee extends ActionSupport implements ApplicationAware, Session
         } else {
             System.out.println("returning Failure from addemployee method");
              String msg="Data not Added to the table";
-            sessionMap.put("Failur", msg);
-
+            sessionMap.put("Failure", msg);
+            Logger log=Logger.getLogger(LoginService.class.getName());
+              log.error(this.getClass().getName() +" message:Something wrong in addEmployee()");
         }
 
         return result;
