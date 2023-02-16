@@ -6,15 +6,11 @@ package com.exavalu.services;
 
 import com.exavalu.models.Api;
 import com.exavalu.utils.JDBCConnectionManager;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import org.apache.log4j.Logger;
-import org.json.*;
 
 
 
